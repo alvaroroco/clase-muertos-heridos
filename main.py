@@ -2,7 +2,7 @@ from random import randint
 
 
 def generar_num_aleatorio():
-    num_aleatorio = "".join([str(randint(0, 9)) for i in range(4)])
+    num_aleatorio = "".join(str(randint(0, 9)) for _ in range(4))
     return num_aleatorio
 
 
