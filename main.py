@@ -7,15 +7,12 @@ def generar_num_aleatorio():
 
 
 def pedir_numero():
-    num_introducido = ""
-    while not num_introducido.isnumeric() or len(num_introducido) != 4:
+    while True:
         num_introducido = input("Por favor, introduce un número de 4 dígitos: ")
-        if not num_introducido.isnumeric() or len(num_introducido) != 4:
-            print("El número introducido no es válido")
+        if num_introducido.isnumeric() and len(num_introducido) == 4:
+            return num_introducido
 
-        print("\n")
-
-    return num_introducido
+        print("El número introducido no es válido\n")
 
 
 def calcular_muertos_heridos(num_pensado: str, num_usuario: str) -> tuple[bool, str]:
