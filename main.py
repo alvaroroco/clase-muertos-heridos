@@ -18,7 +18,7 @@ def pedir_numero():
     return num_introducido
 
 
-def calcular_muertos_heridos(num_pensado, num_usuario):
+def calcular_muertos_heridos(num_pensado: str, num_usuario: str) -> tuple[bool, str]:
     if num_pensado == num_usuario:
         return True, "MMMM"
 
@@ -28,8 +28,6 @@ def calcular_muertos_heridos(num_pensado, num_usuario):
             muertos_heridos[i] = "M"
         elif num_usuario[i] in num_pensado[:i] + num_pensado[i + 1 :]:
             muertos_heridos[i] = "H"
-        else:
-            muertos_heridos[i] = "V"
 
     return False, "".join(muertos_heridos)
 
